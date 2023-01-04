@@ -1,7 +1,7 @@
 namespace PeanutTradeTest.Primitives;
 
-public class GetEstimateResponse
+public class Estimate
 {
     public string? ExhcangeName { get; set; }
-    public int OutputAmount { get; set; }
+    public double OutputAmount { get; set; }
 }
