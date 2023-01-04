@@ -19,8 +19,7 @@ public class KucoinExchange : IExchange
         response = await client.GetStringAsync(endpoint);
         last = JsonDocument.Parse(response).RootElement.GetProperty("data").GetProperty("last").GetString();
 
-        if (last != null) return 1 / Double.Parse(last, CultureInfo.InvariantCulture);
-
-        return 0;
+        if (last == null) throw new ArgumentException("No such trading pair.");
+        return 1 / Double.Parse(last, CultureInfo.InvariantCulture);
     }
 }

@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeanutTradeTest.BusinessLog
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeanutTradeTest.Middleware", "PeanutTradeTest.Middleware\PeanutTradeTest.Middleware.csproj", "{2B634322-7AF7-4F8A-B5BA-26B337D0BD57}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeanutTradeTest.Validation", "PeanutTradeTest.Validation\PeanutTradeTest.Validation.csproj", "{58728D47-EA82-40B3-AB07-1BBD363D19F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{2B634322-7AF7-4F8A-B5BA-26B337D0BD57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B634322-7AF7-4F8A-B5BA-26B337D0BD57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B634322-7AF7-4F8A-B5BA-26B337D0BD57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58728D47-EA82-40B3-AB07-1BBD363D19F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58728D47-EA82-40B3-AB07-1BBD363D19F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58728D47-EA82-40B3-AB07-1BBD363D19F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58728D47-EA82-40B3-AB07-1BBD363D19F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

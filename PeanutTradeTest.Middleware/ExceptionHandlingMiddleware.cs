@@ -26,6 +26,7 @@ public class ExceptionHandlingMiddleware : IMiddleware
 
         switch (exception)
         {
+            case ArgumentException:
             case NullReferenceException:
             case ValidationException:
                 response.StatusCode = (int)HttpStatusCode.BadRequest;

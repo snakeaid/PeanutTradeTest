@@ -1,7 +1,9 @@
+using FluentValidation;
 using MediatR;
 using PeanutTradeTest.BusinessLogic.Handlers;
 using PeanutTradeTest.Middleware;
 using PeanutTradeTest.Primitives;
+using PeanutTradeTest.Validation;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +20,8 @@ builder.Logging.AddSerilog(logger);
 // Add services to the container.
 builder.Services.AddTransient<Market, Market>();
 builder.Services.AddMediatR(typeof(GetRatesHandler));
+builder.Services.AddValidatorsFromAssemblyContaining(typeof(GetRatesModelValidator));
+builder.Services.AddScoped<ExceptionHandlingMiddleware>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

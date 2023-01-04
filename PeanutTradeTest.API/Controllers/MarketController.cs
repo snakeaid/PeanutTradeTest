@@ -20,18 +20,18 @@ public class MarketController : ControllerBase
     [HttpPost("estimate/")]
     [ProducesResponseType((int)HttpStatusCode.BadRequest)]
     [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(Estimate))]
-    public async Task<IActionResult> GetEstimate(GetEstimateRequest request)
+    public async Task<IActionResult> GetEstimate(GetEstimateModel model)
     {
-        var result = await _mediator.Send(request);
+        var result = await _mediator.Send(new GetEstimateRequest { Model = model });
         return Ok(result);
     }
     
     [HttpPost("rates/")]
     [ProducesResponseType((int)HttpStatusCode.BadRequest)]
     [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(List<ExchangeRate>))]
-    public async Task<IActionResult> GetRates(GetRatesRequest request)
+    public async Task<IActionResult> GetRates(GetRatesModel model)
     {
-        var result = await _mediator.Send(request);
+        var result = await _mediator.Send(new GetRatesRequest { Model = model });
         return Ok(result);
     }
 }
