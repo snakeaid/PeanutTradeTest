@@ -6,15 +6,27 @@ using Microsoft.Extensions.Logging;
 
 namespace PeanutTradeTest.Middleware;
 
+/// <summary>
+/// Middleware class used to handle exceptions.
+/// </summary>
 public class ExceptionHandlingMiddleware : IMiddleware
 {
     private readonly ILogger<ExceptionHandlingMiddleware> _logger;
-
+    
+    /// <summary>
+    /// Constructs an instance of <see cref="ExceptionHandlingMiddleware"/> using the specified logger.
+    /// </summary>
+    /// <param name="logger">An instance of <see cref="ILogger{TCategoryName}"/> for <see cref="ExceptionHandlingMiddleware"/>.</param>
     public ExceptionHandlingMiddleware(ILogger<ExceptionHandlingMiddleware> logger)
     {
         _logger = logger;
     }
 
+    /// <summary>
+    /// Tries to invoke the delegate and catches the exception if there is one.
+    /// </summary>
+    /// <param name="context">An instance of <see cref="HttpContext"/> class.</param>
+    /// <returns><see cref="Task"/></returns>
     public async Task InvokeAsync(HttpContext context, RequestDelegate next)
     {
         try

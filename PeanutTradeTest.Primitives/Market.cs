@@ -3,10 +3,19 @@ using PeanutTradeTest.Abstractions;
 
 namespace PeanutTradeTest.Primitives;
 
+/// <summary>
+/// This class represents the crypto currency market.
+/// </summary>
 public class Market
 {
+    /// <summary>
+    /// Gets the list of all exchanges paired with their names.
+    /// </summary>
     public List<(string, IExchange)> Exchanges { get; }
 
+    /// <summary>
+    /// Constructs an instance of <see cref="Market"/>.
+    /// </summary>
     public Market()
     {
         Exchanges = new();

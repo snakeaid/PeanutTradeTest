@@ -4,8 +4,18 @@ using PeanutTradeTest.Abstractions;
 
 namespace PeanutTradeTest.Primitives;
 
+/// <summary>
+/// This class represents the Binance exchange and implements <see cref="IExchange"/>.
+/// </summary>
 public class BinanceExchange : IExchange
 {
+    /// <summary>
+    /// Gets the rate for the specified pair.
+    /// </summary>
+    /// <param name="inputCurrency">The input currency.</param>
+    /// <param name="outputCurrency">The output currency.</param>
+    /// <returns><see cref="Task"/> for <see cref="double"/>.</returns>
+    /// <exception cref="ArgumentException">Thrown if there is no such trading pair.</exception>
     public async Task<double> GetRate(string inputCurrency, string outputCurrency)
     {
         string? last;
