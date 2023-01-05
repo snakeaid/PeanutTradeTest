@@ -22,7 +22,7 @@ public class BinanceExchange : IExchange
         response = await client.GetAsync(endpoint);
         if (!response.IsSuccessStatusCode)
         {
-            throw new ArgumentException("No such trading pair.");
+            throw new ArgumentException("No such trading pair on Binance.");
         }
         last = JsonDocument.Parse(await response.Content.ReadAsStringAsync()).RootElement.GetProperty("price").GetString();
         return 1 / Double.Parse(last!, CultureInfo.InvariantCulture);
